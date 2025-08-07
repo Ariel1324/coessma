@@ -1378,29 +1378,51 @@
                        <p>informacion@coessma.com.mx </p>
                     </div>
                      
-                     <form method="post">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <input class="form-control" id="name" placeholder="Nombre completo" type="text">
+                <div class="row">
+                    <!-- Columna del formulario -->
+                    <div class="col-md-6">
+                        <form id="contactForm" method="post">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <input class="form-control" id="name" placeholder="Nombre completo" type="text"
+                                        required>
+                                </div>
+                                <div class="col-md-12">
+                                    <input class="form-control" id="email" placeholder="Correo electrónico" type="email"
+                                        required>
+                                </div>
+                                <div class="col-md-12">
+                                    <input class="form-control" id="subject" placeholder="Asunto" type="text" required>
+                                </div>
+                                <div class="col-md-12">
+                                    <textarea class="form-control" id="message" rows="7" placeholder="Mensaje"
+                                        required></textarea>
+                                </div>
+                                <div class="col-md-12 text-right">
+                                    <button type="submit" class="btn btn-green">Enviar mensaje</button>
+                                </div>
+                                <div class="col-md-12">
+                                    <p id="formMessage" style="margin-top:10px;"></p>
+                                </div>
                             </div>
-                            <div class="col-md-4">
-                                <input class="form-control" id="email" placeholder="Correo electrónico" type="email">
-                            </div>
-                            <div class="col-md-4">
-                                <input class="form-control" id="subject" placeholder="Asunto" type="text">
-                            </div>
-                            <div class="col-md-12">
-                                <textarea class="form-control" id="message" rows="7" placeholder="Mensaje"></textarea>
-                            </div>
-                            <div class="col-md-12 text-right">
-                                <button type="submit" class="btn btn-green">Enviar mensaje</button>
-                            </div>
-                        </div>
-                    </form>
-               </div>
-              <!--End contact form-->
-              
-       </div> <!-- /.container-->
+                        </form>
+                    </div>
+
+                    <!-- Mapa de Google Maps -->
+                    <div class="col-md-6">
+                        <!-- <h4 class="text-center">Ubicación</h4>-->
+
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d217361.6577091852!2d-106.6081139367476!3d31.653670611994773!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86e75ecb3d0b329d%3A0xb196100549c7974!2zSnXDoXJleiwgQ2hpaC4!5e0!3m2!1ses-419!2smx!4v1754565992261!5m2!1ses-419!2smx"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+
+                    </div>
+
+                    <!--End contact form-->
+
+                </div> <!-- /.container-->
    </section>
    <!--End Contact-->
    
@@ -1420,7 +1442,7 @@
                <div class="col-md-6 col-sm-6 col-xs-6">
                    <div class="social-icons">
                        <ul>
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="https://www.facebook.com/share/1J7wF2wndA/"><i class="fa fa-facebook"></i></a></li>
                     <!--<li> <a href="#"><i class="fa fa-twitter"></i></a></li>-->
                     <!--<li><a href="#"><i class="fa fa-google-plus"></i></a></li>-->
                         <li><a href="#"><i class="fa fa-instagram"></i></a></li>
@@ -1435,6 +1457,41 @@
 
    <a href="#" class="scrollup"> <i class="fa fa-chevron-up"> </i> </a>
 
+    <!-- js code-->
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault(); // Evita que se recargue la página
+
+            // Capturar valores
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const subject = document.getElementById('subject').value.trim();
+            const message = document.getElementById('message').value.trim();
+            const formMessage = document.getElementById('formMessage');
+
+            // Validación simple
+            if (!name || !email || !subject || !message) {
+                formMessage.style.color = 'red';
+                formMessage.textContent = 'Por favor, llena todos los campos.';
+                return;
+            }
+
+            // Simula el envío (puedes reemplazar con una llamada fetch/ajax)
+            console.log('Formulario enviado:', { name, email, subject, message });
+
+            // Mostrar mensaje de éxito
+            formMessage.style.color = 'green';
+            formMessage.textContent = 'Mensaje enviado correctamente. ¡Gracias!';
+
+            // Limpiar formulario
+            document.getElementById('contactForm').reset();
+        });
+    </script>
+
+
+    <!-- End js code-->
+		       
     <!--Plugins-->
 	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script> 
@@ -1450,6 +1507,7 @@
     
  </body>
 </html>
+
 
 
 
