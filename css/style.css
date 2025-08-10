@@ -2251,6 +2251,35 @@ ul.timeline {
 	font-weight: 600;
 }
 
+
+/*----------------- INICIO DE PAGE HEADER CAPACITACION ------------------*/
+
+#page-header-capacitacion {
+	background:url('../images/page-header-capacitacion.jpg');
+	padding: 130px 0px 80px;
+	text-align: center;
+}
+
+#page-header-capacitacion:after {
+	background:rgba(0, 0, 0, .5);
+	position:absolute;
+	left:0px;
+	right:0px;
+}
+
+#page-header-capacitacion h1 {
+	margin-bottom: 0px;
+	color: #FFF;
+	font-weight: 600;
+}
+
+
+
+/*----------------- INICIO DE PAGE HEADER CAPACITACION ------------------*/
+
+
+
+
 .breadcrumb {
 	background: none;
 	padding-top: 35px;
