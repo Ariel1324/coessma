@@ -1,0 +1,136 @@
+/* ======= ESTILOS GENERALES ======= */
+body {
+    background: url('../images/slider/1.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+}
+
+.login-container {
+    background-color: #2e2e2e;
+    padding: 40px 35px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.login-container img {
+    width: 120px;
+    margin-bottom: 15px;
+}
+
+.login-container h2 {
+    /*font-weight: bold;*/
+    color: #FFD700;
+    margin-bottom: 25px;
+}
+
+.form-control {
+    border-radius: 8px;
+    margin-bottom: 15px;
+    height: 45px;
+}
+
+.btn-login {
+    width: 100%;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #FFD700;
+    color: #fff;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.btn-login:hover {
+    text-decoration: underline;
+}
+
+.login-container a {
+    display: block;
+    margin-top: 10px;
+    color: #FFD700;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.login-container a:hover {
+    text-decoration: underline;
+}
+
+#loginMessage {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+/* ======= COPYRIGHT ======= */
+.login-footer {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    background: rgba(255, 255, 255, 0.1); /* Transparente y elegante */
+    backdrop-filter: blur(3px);
+}
+
+.login-footer p {
+    color: #f1f1f1;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    margin: 0;
+}
+
+/* ======= RESPONSIVIDAD ======= */
+
+/* Tablets */
+@media (max-width: 992px) {
+    .login-container {
+        max-width: 90%;
+        padding: 30px 25px;
+    }
+
+    .login-container img {
+        width: 100px;
+    }
+}
+
+/* Celulares */
+@media (max-width: 576px) {
+    body {
+        padding: 10px;
+        align-items: flex-start;
+        background-position: center;
+    }
+
+    .login-container {
+        margin-top: 60px;
+        padding: 25px 20px;
+        border-radius: 10px;
+    }
+
+    .login-container h2 {
+        font-size: 22px;
+    }
+
+    .btn-login {
+        font-size: 15px;
+        padding: 8px;
+    }
+
+    .login-container a {
+        font-size: 13px;
+    }
+}
